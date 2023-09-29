@@ -16,10 +16,10 @@ crate_type = ["cdylib"]
 rustysynth = "1.2.1"
 tinyaudio = "0.1.2"
 itertools = "0.11.0"
+log = "0.4"
 
 [target.'cfg(target_os = "android")'.dependencies]
 android-activity = { version = "0.4.1", features = ["native-activity"] }
-log = "0.4"
 android_logger = "0.13.3"
 
 [package.metadata.android.sdk]
