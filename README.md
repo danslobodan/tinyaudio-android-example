@@ -1,4 +1,16 @@
+## Intent
+
+This project is meant to be an experimental playground for building Rust apps for Android, escpecially when using a cross-platform library that relies on native code.
+
+In this case, the library is [tinyaudio](https://github.com/mrDIMAS/tinyaudio), and in case of Android it relies on [AAudio](https://developer.android.com/ndk/guides/audio/aaudio/aaudio) for audio output.
+
+To produce a non-trivial example of audio output, I am using [rustysynth](https://github.com/sinshu/rustysynth) library to load a soundfont and play a midi file.
+
+I am aware that even in the case where it builds correctly, the output is pretty bad, but that is beyond the scope of this project for now. Still, if you know how to fix it, I would love to hear it.
+
 To run using [cargo-apk](https://github.com/rust-mobile/cargo-apk):
+
+## Running the project
 
 # SDK 33
 
