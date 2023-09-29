@@ -1,4 +1,4 @@
-// [cfg(target_os = "android")]
+#![cfg(target_os = "android")]
 use android_activity::{ AndroidApp, MainEvent, PollEvent };
 use itertools::Itertools;
 use std::sync::Arc;
@@ -37,13 +37,14 @@ fn android_main(app: AndroidApp) {
 
                             info!("Midi file loaded.");
 
-                            let file_name = String::from("A320U.sf2");
                             let mut soundfont_file = asset_manager
-                                .open(&CString::new(file_name.as_str()).unwrap())
+                                .open(&CString::new("A320U.sf2").unwrap())
                                 .expect("Could not open soundfont");
 
                             let mut buffer = soundfont_file.get_buffer().unwrap();
                             let sound_font = Arc::new(SoundFont::new(&mut buffer).unwrap());
+
+                            info!("Soundfont loaded.");
 
                             let params = OutputDeviceParameters {
                                 channels_count: 2,
